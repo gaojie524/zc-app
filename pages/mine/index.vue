@@ -52,18 +52,7 @@
             <view>编辑资料</view>
           </view>
         </view>
-        <view class="list-cell list-cell-arrow" @click="handleHelp">
-          <view class="menu-item-box">
-            <view class="iconfont icon-help menu-icon"></view>
-            <view>常见问题</view>
-          </view>
-        </view>
-        <view class="list-cell list-cell-arrow" @click="handleAbout">
-          <view class="menu-item-box">
-            <view class="iconfont icon-aixin menu-icon"></view>
-            <view>关于我们</view>
-          </view>
-        </view>
+       
         <view class="list-cell list-cell-arrow" @click="handleToSetting">
           <view class="menu-item-box">
             <view class="iconfont icon-setting menu-icon"></view>
@@ -104,17 +93,8 @@
       handleToLogin() {
         this.$tab.reLaunch('/pages/login')
       },
-      handleToAvatar() {
-        this.$tab.navigateTo('/pages/mine/avatar/index')
-      },
-      handleHelp() {
-        this.$tab.navigateTo('/pages/mine/help/index')
-      },
-      handleAbout() {
-        this.$tab.navigateTo('/pages/mine/about/index')
-      },
       handleJiaoLiuQun() {
-        this.$modal.showToast('QQ群：①133713780(满)、②146013835(满)、③189091635')
+        this.$modal.showToast('模块建设中~')
       },
       handleBuilding() {
         this.$modal.showToast('模块建设中~')

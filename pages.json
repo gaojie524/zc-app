@@ -1,4 +1,7 @@
 {
+  "easycom": {
+  		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  	},
   "pages": [{
     "path": "pages/login",
     "style": {
@@ -12,7 +15,7 @@
   }, {
     "path": "pages/index",
     "style": {
-      "navigationBarTitleText": "若依移动端框架",
+      "navigationBarTitleText": "云帆移动端框架",
       "navigationStyle": "custom"
     }
   }, {
@@ -51,16 +54,6 @@
       "navigationBarTitleText": "应用设置"
     }
   }, {
-    "path": "pages/mine/help/index",
-    "style": {
-      "navigationBarTitleText": "常见问题"
-    }
-  }, {
-    "path": "pages/mine/about/index",
-    "style": {
-      "navigationBarTitleText": "关于我们"
-    }
-  }, {
     "path": "pages/common/webview/index",
     "style": {
       "navigationBarTitleText": "浏览网页"
@@ -70,6 +63,13 @@
     "style": {
       "navigationBarTitleText": "浏览文本"
     }
+  },
+  {
+  	"path" : "pages/work/test",
+  	"style" : 
+  	{
+  		"navigationBarTitleText" : "拍照测试"
+  	}
   }],
   "tabBar": {
     "color": "#000000",

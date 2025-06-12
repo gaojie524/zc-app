@@ -4,8 +4,10 @@ import store from './store' // store
 import plugins from './plugins' // plugins
 import './permission' // permission
 import { getDicts } from "@/api/system/dict/data"
-
+import uView from "uview-ui";
 Vue.use(plugins)
+Vue.use(uView)
+
 
 Vue.config.productionTip = false
 Vue.prototype.$store = store

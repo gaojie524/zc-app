@@ -15,60 +15,12 @@
     <uni-section title="系统管理" type="line"></uni-section>
     <view class="grid-body">
       <uni-grid :column="4" :showBorder="false" @change="changeGrid">
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="person-filled" size="30"></uni-icons>
-            <text class="text">用户管理</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="staff-filled" size="30"></uni-icons>
-            <text class="text">角色管理</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="color" size="30"></uni-icons>
-            <text class="text">菜单管理</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="settings-filled" size="30"></uni-icons>
-            <text class="text">部门管理</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="heart-filled" size="30"></uni-icons>
-            <text class="text">岗位管理</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="bars" size="30"></uni-icons>
-            <text class="text">字典管理</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="gear-filled" size="30"></uni-icons>
-            <text class="text">参数设置</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="chat-filled" size="30"></uni-icons>
-            <text class="text">通知公告</text>
-          </view>
-        </uni-grid-item>
-        <uni-grid-item>
-          <view class="grid-item-box">
-            <uni-icons type="wallet-filled" size="30"></uni-icons>
-            <text class="text">日志管理</text>
-          </view>
-        </uni-grid-item>
+		<uni-grid-item>
+		  <view class="grid-item-box">
+		    <uni-icons type="wallet-filled" size="30"></uni-icons>
+		    <text class="text">拍照测试</text>
+		  </view>
+		</uni-grid-item>
       </uni-grid>
     </view>
   </view>
@@ -80,9 +32,7 @@
       return {
         current: 0,
         swiperDotIndex: 0,
-        data: [{
-            image: '/static/images/banner/banner01.jpg'
-          },
+        data: [
           {
             image: '/static/images/banner/banner02.jpg'
           },
@@ -93,15 +43,28 @@
       }
     },
     methods: {
-      clickBannerItem(item) {
-        console.info(item)
-      },
-      changeSwiper(e) {
-        this.current = e.detail.current
-      },
-      changeGrid(e) {
-        this.$modal.showToast('模块建设中~')
-      }
+        clickBannerItem(item) {
+              console.info(item)
+            },
+            changeSwiper(e) {
+              this.current = e.detail.current
+            },
+            changeGrid(e) {
+              this.$modal.showToast('模块建设中~')
+			  this.navigateToTest();
+            },
+            // 新增的跳转方法
+            navigateToTest() {
+              uni.navigateTo({
+                url: '/pages/work/test', // 跳转到拍照测试页面
+                success() {
+                  console.log('跳转成功')
+                },
+                fail() {
+                  console.log('跳转失败')
+                }
+              })
+            } // 确保最后一个方法后没有逗号
     }
   }
 </script>

@@ -3,7 +3,7 @@
     <view class="logo-content align-center justify-center flex">
       <image style="width: 100rpx;height: 100rpx;" :src="globalConfig.appInfo.logo" mode="widthFix">
       </image>
-      <text class="title">若依移动端登录</text>
+      <text class="title">云帆移动端登录</text>
     </view>
     <view class="login-form-content">
       <view class="input-item flex align-center">
@@ -40,6 +40,7 @@
 
 <script>
   import { getCodeImg } from '@/api/login'
+  import { getToken } from '@/utils/auth'
 
   export default {
     data() {
@@ -59,6 +60,13 @@
     },
     created() {
       this.getCode()
+    },
+    onLoad() {
+      //#ifdef H5
+      if (getToken()) {
+        this.$tab.reLaunch('/pages/index')
+      }
+      //#endif
     },
     methods: {
       // 用户注册
